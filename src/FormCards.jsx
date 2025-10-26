@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { formContext } from "./formContext.js";
-import Edit from "./Edit.jsx";
 
 const FormCards = (props) => {
   const { cardItem, setCardItem } = useContext(formContext);
@@ -21,10 +20,8 @@ const FormCards = (props) => {
       <>
         {cardItem.map((card) => (
           <div
-            className={`border border-gray-300 rounded-md w-full h-10 
-          flex justify-between items-center px-4 ${
-            card.done ? "bg-green-300" : ""
-          }`}
+            className={`border border-gray-300 ${card.isEdit && !card.done ? ("bg-amber-300") : card.isEdit && card.done ? ("bg-amber-300") : !card.isEdit && card.done ? ("bg-green-300") : ("bg-white")} rounded-md w-full h-10 
+          flex justify-between items-center px-4`}
           >
             <span>{card.title}</span>
             <div>
@@ -43,8 +40,6 @@ const FormCards = (props) => {
                 ></i>
               </span>
               <button type="button" onClick={() => props.textInputFocusHandler(card.id, card.title)} className="m-1 cursor-pointer">Edit</button>
-              {console.log(cardItem)
-              }
             </div>
           </div>
         ))}

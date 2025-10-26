@@ -8,7 +8,6 @@ const TopForm = (props) => {
   const handleSetTask = (e) => {
     props.itemIdTitle[1] = e.target.value;
     setTask(e.target.value);
-    // props.itemId[0] = ['']
   };
   const addTask = () => {
     setCardItem([...cardItem, { id: Math.random(), title: task, done: false, isEdit: false }]);
@@ -19,6 +18,7 @@ const TopForm = (props) => {
     cardItem.forEach(item => {
       if (item.id == id) {
         item.title = task;
+        item.isEdit = false;
         let newCardArray = [...cardItem];
         setCardItem(newCardArray);
       }

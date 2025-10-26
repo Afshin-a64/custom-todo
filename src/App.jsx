@@ -5,8 +5,7 @@ import "./App.css";
 import "./style.css";
 import TopForm from "./TopForm.jsx";
 import FormCards from "./FormCards.jsx";
-import { formContext, refContext } from "./formContext.js";
-import Edit from "./Edit.jsx";
+import { formContext } from "./formContext.js";
 
 function App() {
   const [cardItem, setCardItem] = useState([
