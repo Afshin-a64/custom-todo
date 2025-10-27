@@ -62,7 +62,7 @@ function App() {
             >
               <div className="content w-full md:w-1/2 flex flex-col gap-5 text-center">
                 <TopForm textInputRef={textInputRef} itemIdTitle={itemIdTitle} />
-                <FormCards textInputFocusHandler={textInputFocusHandler}/>
+                <FormCards textInputFocusHandler={textInputFocusHandler} itemIdTitle={itemIdTitle}/>
               </div>
             </formContext.Provider>
           </div>

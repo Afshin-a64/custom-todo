@@ -37,6 +37,7 @@ const FormCards = (props) => {
                 <i
                   onClick={() => deleteCard(card.id)}
                   className="fa-solid fa-trash text-red-500 mx-3 hover:text-shadow-md hover:text-shadow-red-300 cursor-pointer"
+                  disabled={props.itemIdTitle[0] ? true : false}
                 ></i>
               </span>
               <button type="button" onClick={() => props.textInputFocusHandler(card.id, card.title)} className="m-1 cursor-pointer">Edit</button>

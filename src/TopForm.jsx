@@ -14,10 +14,10 @@ const TopForm = (props) => {
     setTask("");
     props.itemIdTitle[1] = ''
   };
-  const editTask = (id) => {
+  const editTask = (id, title) => {
     cardItem.forEach(item => {
       if (item.id == id) {
-        item.title = task;
+        item.title = title;
         item.isEdit = false;
         let newCardArray = [...cardItem];
         setCardItem(newCardArray);
@@ -42,7 +42,7 @@ const TopForm = (props) => {
             value={props.itemIdTitle[1] ? props.itemIdTitle[1] : task}
           ></input>
           <button
-            onClick={props.itemIdTitle[0] ? () => editTask(props.itemIdTitle[0]) : addTask}
+            onClick={props.itemIdTitle[0] ? () => editTask(props.itemIdTitle[0], props.itemIdTitle[1]) : addTask}
             type="button"
             className="border border-gray-300 bg-green-700 text-white rounded-md w-18 h-10 cursor-pointer"
           >
